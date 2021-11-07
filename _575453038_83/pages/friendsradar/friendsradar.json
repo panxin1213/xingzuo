@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "radar": "/components/radar/radar",
+        "dialog": "/components/dialog/dialog",
+        "show-tip": "/components/show-tip/show-tip",
+        "nav": "/components/nav/nav",
+        "reward-pop": "/components/reward-pop/reward-pop"
+    },
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light"
+}

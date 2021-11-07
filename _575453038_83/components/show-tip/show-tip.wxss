@@ -1,0 +1,115 @@
+.tips-mask {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.3);
+    z-index: 100;
+    animation: tip 1.5s forwards;
+}
+
+.tips-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    z-index: 101;
+    padding-top: 48rpx;
+    padding-bottom: 17rpx;
+    width: 406rpx;
+    border: 6rpx solid #f8dc3e;
+    background: #fff;
+    border-radius: 30rpx;
+    background: #ffd835;
+}
+
+.inner-wrap {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.inner-bg {
+    width: 354rpx;
+    height: 230rpx;
+    position: absolute;
+    top: -244rpx;
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+}
+
+.inner-txt {
+    background: #fff;
+    width: 376rpx;
+    border-radius: 20rpx;
+    display: block;
+    margin: auto;
+    font-size: 28rpx;
+    color: #666;
+    font-weight: 900;
+    text-align: center;
+    padding: 20rpx 54rpx 23rpx;
+    box-sizing: border-box;
+    line-height: 43rpx;
+}
+
+@-webkit-keyframes tip {
+    0% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: .9;
+    }
+
+    85% {
+        opacity: .8;
+    }
+
+    90% {
+        opacity: .6;
+    }
+
+    95% {
+        opacity: .3;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes tip {
+    0% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: .9;
+    }
+
+    85% {
+        opacity: .8;
+    }
+
+    90% {
+        opacity: .6;
+    }
+
+    95% {
+        opacity: .3;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

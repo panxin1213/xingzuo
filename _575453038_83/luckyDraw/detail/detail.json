@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "nav": "/components/nav/nav",
+        "show-tip": "/components/show-tip/show-tip",
+        "skeleton": "/luckyDraw/components/skeleton/skeleton"
+    }
+}

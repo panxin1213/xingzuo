@@ -1,0 +1,273 @@
+<mp-navigation-bar></mp-navigation-bar>
+<view bindscroll="scrollHandle" class="container">
+    <guide-top></guide-top>
+    <block wx:if="{{isShow=='1'}}">
+        <nav bind:setfixtop="setfixtop" class="nav-wrap" p_b="0" position="static" title=""></nav>
+        <image class="moon-bg" src="/images/moom.png"></image>
+        <constellation-list bind:toresult="toResult" class="constellation-list" style="top: {{xzTop}};"></constellation-list>
+        <view bindtap="serviceHandle" class="index-banner" data-id="{{10002}}" hoverClass="index-banner-act" id="GZHnoticeALDIndex" wx:if="{{gzhShow&&fromThirdMini==1}}">
+            <image class="index-banner-image" mode="widthFix" src="{{img_host}}/xz/ad/index_banner.png"></image>
+        </view>
+        <view class="index-banner-waimai" style="top: {{xzTop}};" wx:if="{{waimaiList&&waimaiList.length>0}}">
+            <view bindtap="toMiniPro" class="waimai-item" data-idx="{{idx}}" id="{{waimai.id}}" wx:for="{{waimaiList}}" wx:for-index="idx" wx:for-item="waimai">
+                <image class="waimai-img" mode="widthFix" src="{{waimai.imgIndex}}"></image>
+            </view>
+        </view>
+    </block>
+    <block wx:elif="{{isShow=='2'}}">
+        <float-btn bind:luckyservice="toSubscribeText" h="{{move_h}}" hide="{{floatBtnShow}}" icon="{{weekLuckyIcon}}" l="unset" reddot="{{btnReddot}}" shareType="3" t="{{move_t}}" type="luckyBtn" w="170rpx" y="{{float_y}}" wx:if="{{!floatBtnHide}}"></float-btn>
+        <view class="banner-top" style="padding-top:{{bannerTop}};">
+            <view bindtap="toRadar" class="banner-item" data-id="-2">
+                <image class="banner-item-bg" src="/images/banner-top.png"></image>
+                <text class="banner-item-txt">{{info&&info.name}}和哪个星座最配？</text>
+                <view class="banner-item-head">
+                    <open-data type="userAvatarUrl"></open-data>
+                </view>
+            </view>
+            <view class="banner-waimai" wx:if="{{waimaiList&&waimaiList.length>0}}">
+                <view bindtap="toMiniPro" class="waimai-item" data-idx="{{idx}}" id="{{waimai.id}}" wx:for="{{waimaiList}}" wx:for-index="idx" wx:for-item="waimai">
+                    <image class="waimai-img" mode="widthFix" src="{{waimai.imgSub}}"></image>
+                </view>
+            </view>
+        </view>
+        <nav bind:setfixtop="setfixtop" class="nav-wrap" p_b="0" position="fixed" title="二狗星座" wx:if="{{navShow}}">
+            <view bindtap="back" class="back" hoverClass="back-act" slot="btn">
+                <text class="txt">切换星座</text>
+            </view>
+        </nav>
+        <view class="swiper-wrap" style="height:{{h[act]}};">
+            <tabs bg="{{info.color}}" bind:itemtap="changetab" height="70" items="{{tab_item}}" selected="{{act_select}}" textSize="28" width="690">
+                <view bindtap="back" class="back tab-back" hoverClass="back-act" slot="btn">
+                    <text class="txt">切换星座</text>
+                </view>
+            </tabs>
+            <swiper bindchange="swiperchange" class="swiper" current="{{act}}" duration="200" easingFunction="linear" nextMargin="0px" previousMargin="0px">
+                <swiper-item class="swiper-item" wx:for="{{detail}}" wx:key="{{index}}">
+                    <view class="tab-content" id="tabcon{{index}}" wx:if="{{detail[index]}}">
+                        <view class="stat">
+                            <view class="top" style="background-color:{{info.color}};">
+                                <image class="xz-img" mode="heightFix" src="{{index==0?info.img:info.default_img}}"></image>
+                                <view class="xz-stat">
+                                    <view class="constellation">{{info&&info.name}}<i class="time">{{info&&info.time}}</i>
+                                    </view>
+                                    <star class="star" count="{{detail[index]&&detail[index].grade}}" type="star-b red"></star>
+                                    <text class="suggest">{{detail[index]&&detail[index].suggest}}</text>
+                                </view>
+                                <view class="time-txt" wx:if="{{index==0||index==1}}">
+                                    <text class="date">{{date_arr[index].date}}</text>
+                                    <text class="day">{{date_arr[index].day}}</text>
+                                </view>
+                            </view>
+                            <view class="btns-wrap">
+                                <button bindtap="toTarot" class="btn btn-tarot" data-type="4" hoverClass="btn-act" id="tarot">
+                                    <image class="btn-img" src="/images/icon/tarot.png"></image>
+                                    <text class="btn-shine"></text>
+                                </button>
+                                <button bindtap="luckyPopShow" class="btn btn-l" data-type="3-0" hoverClass="btn-act" id="lucky-btn1">
+                                    <image class="btn-img" src="/images/icon/lucky.png"></image>
+                                </button>
+                                <button class="btn btn-r icon-share-1" data-type="2" hoverClass="btn-act" openType="share">
+                                    <image class="btn-img" src="/images/icon/share.png"></image>
+                                </button>
+                            </view>
+                            <view class="bottom">
+                                <view class="item">
+                                    <text class="title">爱情运势</text>
+                                    <star class="star" count="{{detail[index]&&detail[index].love}}" type="red"></star>
+                                </view>
+                                <view class="item">
+                                    <text class="title">事业学业</text>
+                                    <star class="star" count="{{detail[index]&&detail[index].career}}" type="blue"></star>
+                                </view>
+                                <view class="item">
+                                    <text class="title">财富运势</text>
+                                    <star class="star" count="{{detail[index]&&detail[index].wealthy}}" type="orange"></star>
+                                </view>
+                                <block wx:if="{{sourceType===1}}">
+                                    <view class="item" wx:if="{{index==0||index==1}}">
+                                        <text class="title">幸运数字</text>
+                                        <text class="lucky-num">{{detail[index]&&detail[index].luckyNum}}</text>
+                                    </view>
+                                    <view class="item" wx:if="{{index==0||index==1}}">
+                                        <text class="title">健康指数</text>
+                                        <process bg="linear-gradient(to right,#50E3D0,#0DD591)" class="process" percent="{{detail[index]&&detail[index].healthy}}"></process>
+                                    </view>
+                                    <view class="item" wx:if="{{index==2||index==3||index==4}}">
+                                        <text class="title">健康指数</text>
+                                        <star class="star" count="{{detail[index]&&detail[index].healthy}}" type="green"></star>
+                                    </view>
+                                    <view class="item" wx:if="{{index==2}}">
+                                        <text class="title">幸运星座</text>
+                                        <text class="match">{{detail[index]&&detail[index].match}}</text>
+                                    </view>
+                                    <view class="item" wx:if="{{index==0||index==1||index==2}}">
+                                        <text class="title">幸运颜色</text>
+                                        <text class="lucky-color">{{detail[index]&&detail[index].luckyColor}}</text>
+                                    </view>
+                                    <view class="item" wx:if="{{index==2}}">
+                                        <text class="title">提防星座</text>
+                                        <text class="match">{{detail[index]&&detail[index].beware}}</text>
+                                    </view>
+                                    <block wx:if="{{index==0||index==1}}">
+                                        <view class="item">
+                                            <text class="title">人缘指数</text>
+                                            <process bg="linear-gradient(to right,#FF9C89,#FF7A9C)" class="process" percent="{{detail[index]&&detail[index].popularity}}"></process>
+                                        </view>
+                                        <view class="item" wx:if="{{index==0||index==1}}">
+                                            <text class="title">速配星座</text>
+                                            <text class="match">{{detail[index]&&detail[index].match}}</text>
+                                        </view>
+                                    </block>
+                                </block>
+                                <block wx:if="{{sourceType===0}}">
+                                    <view class="item">
+                                        <text class="title">健康指数</text>
+                                        <star class="star" count="{{detail[index]&&detail[index].healthy}}" type="green"></star>
+                                    </view>
+                                    <block wx:if="{{index==0||index==1}}">
+                                        <view class="item">
+                                            <text class="title">幸运数字</text>
+                                            <text class="lucky-num">{{detail[index]&&detail[index].luckyNum}}</text>
+                                        </view>
+                                        <view class="item">
+                                            <text class="title">速配星座</text>
+                                            <text class="match">{{detail[index]&&detail[index].match}}</text>
+                                        </view>
+                                        <view class="item">
+                                            <text class="title">幸运颜色</text>
+                                            <text class="lucky-color">{{detail[index]&&detail[index].luckyColor}}</text>
+                                        </view>
+                                        <view class="item">
+                                            <text class="title">提防星座</text>
+                                            <text class="match">{{detail[index]&&detail[index].beware}}</text>
+                                        </view>
+                                        <view class="item" style="width:100%;">
+                                            <text class="title">适合穿搭</text>
+                                            <text class="match" style="width:auto;">{{detail[index]&&detail[index].luckyDress}}</text>
+                                        </view>
+                                    </block>
+                                    <block wx:if="{{index==2}}">
+                                        <view class="item">
+                                            <text class="title">幸运の日</text>
+                                            <text class="match">{{detail[index]&&detail[index].bestDay}}</text>
+                                        </view>
+                                        <view class="item">
+                                            <text class="title">提防の日</text>
+                                            <text class="match">{{detail[index]&&detail[index].worstDay}}</text>
+                                        </view>
+                                        <view class="item" style="width:100%;">
+                                            <text class="title">本周建议</text>
+                                            <text class="match" style="width:auto;">{{detail[index]&&detail[index].weekSummary}}</text>
+                                        </view>
+                                    </block>
+                                    <block wx:if="{{index==3}}">
+                                        <view class="item">
+                                            <text class="title">幸运物品</text>
+                                            <text class="match">{{detail[index]&&detail[index].luckyGoods}}</text>
+                                        </view>
+                                        <view class="item" style="align-items: flex-start;">
+                                            <text class="title">减压方式</text>
+                                            <text class="match">{{detail[index]&&detail[index].decompression}}</text>
+                                        </view>
+                                    </block>
+                                </block>
+                            </view>
+                        </view>
+                        <view bindtap="serviceHandle" class="banner" data-id="10002" hoverClass="star-banner-bg-act" id="GZHnoticeALD" wx:if="{{fromThirdMini===1&&gzhShow}}">
+                            <image class="star-banner-bg" mode="widthFix" src="{{img_host}}/xz/ad/star_banner.png"></image>
+                        </view>
+                        <view bindtap="serviceHandle" class="banner" data-id="0" hoverClass="banner-act" id="GZHnotice" wx:if="{{fromThirdMini!==1&&gzhShow}}">
+                            <image class="banner-bg" mode="widthFix" src="{{img_api}}/gzh_banner.png"></image>
+                        </view>
+                        <view class="detail">
+                            <view class="block" wx:if="{{index!==4&&sourceType===0||sourceType===1}}">
+                                <view class="tit whole">
+                                    <text class="tit-t">综合运势</text>
+                                </view>
+                                <view class="con">{{detail[index]&&detail[index].comprehensiveFortune}}</view>
+                            </view>
+                            <view class="block" wx:if="{{index!==2&&sourceType===0||sourceType===1}}">
+                                <view class="tit love">
+                                    <text class="tit-t">爱情运势</text>
+                                    <button catchtap="buyGoods" class="btn love-btn" hoverClass="btn-act" id="love-goods">『爱情, 人缘』水晶倾心能量手链</button>
+                                </view>
+                                <view class="con">{{detail[index]&&detail[index].loveFortune}}</view>
+                                <view class="exp" wx:if="{{index==4&&sourceType===0}}">感情桃花月：<text class="month">{{detail[index]&&detail[index].emotionMonth}}</text>
+                                </view>
+                            </view>
+                            <block wx:if="{{index==2&&sourceType===0}}">
+                                <view class="block">
+                                    <view class="tit married">
+                                        <text class="tit-t">有对象</text>
+                                    </view>
+                                    <view class="con">{{detail[index]&&detail[index].married}}</view>
+                                </view>
+                                <view class="block">
+                                    <view class="tit single">
+                                        <text class="tit-t">没对象</text>
+                                    </view>
+                                    <view class="con">{{detail[index]&&detail[index].single}}</view>
+                                </view>
+                            </block>
+                            <view class="block">
+                                <view class="tit career">
+                                    <text class="tit-t">事业学业</text>
+                                </view>
+                                <view class="con">{{detail[index]&&detail[index].careerFortune}}</view>
+                                <view class="exp" wx:if="{{index==4&&sourceType===0}}">事业运势好运月：<text class="month">{{detail[index]&&detail[index].careerMonth}}</text>
+                                </view>
+                            </view>
+                            <view class="block">
+                                <view class="tit wealthy">
+                                    <text class="tit-t">财富运势</text>
+                                </view>
+                                <view class="con">{{detail[index]&&detail[index].wealthFortune}}</view>
+                                <view class="exp" wx:if="{{index==4&&sourceType===0}}">财富旺旺月：<text class="month">{{detail[index]&&detail[index].wealthMonth}}</text>
+                                </view>
+                            </view>
+                            <view class="block" wx:if="{{sourceType===1||index==4&&sourceType===0}}">
+                                <view class="tit healthy">
+                                    <text class="tit-t">健康运势</text>
+                                </view>
+                                <view class="con">{{detail[index]&&detail[index].healthyFortune}}</view>
+                                <view class="exp" wx:if="{{index==4&&sourceType===0}}">健康注意月：<text class="month">{{detail[index]&&detail[index].healthMonth}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="skeletonBox" wx:else>
+                        <skeleton height="{{'260rpx'}}" row="1"></skeleton>
+                        <view class="center">
+                            <skeleton height="{{'110rpx'}}" row="1" width="{{'196rpx'}}"></skeleton>
+                            <skeleton height="{{'110rpx'}}" row="1" width="{{'196rpx'}}"></skeleton>
+                            <skeleton height="{{'110rpx'}}" row="1" width="{{'196rpx'}}"></skeleton>
+                        </view>
+                        <view class="tips">
+                            <view style="width: 50%;">
+                                <skeleton height="{{['38rpx','38rpx','38rpx','38rpx']}}" row="4" width="{{['95%','95%','95%','95%']}}"></skeleton>
+                            </view>
+                            <view style="width: 50%;">
+                                <skeleton height="{{['38rpx','38rpx','38rpx','38rpx']}}" row="4" width="{{['95%','95%','95%','95%']}}"></skeleton>
+                            </view>
+                        </view>
+                        <skeleton height="{{['35rpx','190rpx','35rpx','190rpx','35rpx','190rpx']}}" row="6" width="{{['30%','100%','30%','100%','30%','100%']}}"></skeleton>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="extendWrap" style="padding-top: 50rpx;">
+            <xz-extend bind:essayDetail="essayDetail" xzInfo="{{xzInfo}}">
+                <view class="ext-tit">了解{{info&&info.name}}</view>
+            </xz-extend>
+        </view>
+        <view class="cs-wrap" wx:if="{{tarotList.length>0}}">
+            <view class="ext-tit">超准测算</view>
+            <tarot bind:tarotService="tarotService" tarotList="{{tarotList}}"></tarot>
+        </view>
+        <view class="link-down" style="display:{{link?'block':'none'}};"></view>
+        <show-tip msg="{{msg}}"></show-tip>
+    </block>
+    <block wx:else></block>
+    <lucky-pop auth="{{auth}}" bind:saveService="saveHandle" bind:settingService="settingHandle" lucky="{{lucky_data}}" luckyList="{{luckyList}}" secTitle="{{secTitle}}"></lucky-pop>
+    <pub bind:service="serviceHandle" data="{{pub_data}}"></pub>
+</view>

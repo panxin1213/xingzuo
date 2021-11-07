@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "pub": "/components/pub/pub",
+        "nav": "/components/nav/nav",
+        "float-btn": "/components/float-btn/float-btn"
+    }
+}

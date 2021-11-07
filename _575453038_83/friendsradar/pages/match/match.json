@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "star": "/components/star/star",
+        "nav": "/components/nav/nav",
+        "pub": "/components/pub/pub",
+        "tarot": "/components/tarot/tarot",
+        "xz-extend": "/components/xz-extend/xz-extend"
+    },
+    "navigationStyle": "custom"
+}

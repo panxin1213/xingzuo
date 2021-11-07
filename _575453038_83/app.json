@@ -1,0 +1,106 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/friendsradar/friendsradar",
+        "pages/sharecode/sharecode",
+        "pages/constellationPoster/poster",
+        "pages/welfare/welfare",
+        "pages/more/more",
+        "pages/exchange/exchange",
+        "pages/benefits/benefits"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarTitleText": "二狗星座",
+        "backgroundColor": "#222D4B",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
+        "navigationBarBackgroundColor": "#261A45"
+    },
+    "tabBar": {
+        "color": "#333333",
+        "selectedColor": "#8A32E4",
+        "backgroundColor": "#F9F9F9",
+        "list": [
+            {
+                "text": "星运势",
+                "pagePath": "pages/index/index",
+                "iconPath": "images/nav_img/nav_home_n.png",
+                "selectedIconPath": "images/nav_img/nav_home_h.png"
+            },
+            {
+                "text": "星友圈",
+                "pagePath": "pages/friendsradar/friendsradar",
+                "iconPath": "images/nav_img/nav_quan_n.png",
+                "selectedIconPath": "images/nav_img/nav_quan_h.png"
+            },
+            {
+                "text": "福利",
+                "pagePath": "pages/benefits/benefits",
+                "iconPath": "images/nav_img/nav_present_n.png",
+                "selectedIconPath": "images/nav_img/nav_present_h.png"
+            },
+            {
+                "text": "更多",
+                "pagePath": "pages/more/more",
+                "iconPath": "images/nav_img/nav_more_n.png",
+                "selectedIconPath": "images/nav_img/nav_more_h.png"
+            }
+        ]
+    },
+    "subPackages": [
+        {
+            "root": "friendsradar/",
+            "name": "friends",
+            "pages": [
+                "pages/share/share",
+                "pages/match/match",
+                "pages/detail/detail",
+                "pages/exchange/exchange"
+            ]
+        },
+        {
+            "root": "fortune/",
+            "name": "fortune",
+            "pages": [
+                "essay/essay"
+            ]
+        },
+        {
+            "root": "groupStatistics/",
+            "name": "groupStatistics",
+            "pages": [
+                "share/share",
+                "statistics/statistics"
+            ]
+        },
+        {
+            "root": "luckyDraw/",
+            "name": "luckyDraw",
+            "pages": [
+                "detail/detail",
+                "share/share"
+            ]
+        },
+        {
+            "root": "tarot/",
+            "name": "tarot",
+            "pages": [
+                "tarot/tarot",
+                "index/index"
+            ]
+        },
+        {
+            "root": "test/",
+            "name": "test",
+            "pages": [
+                "test/test",
+                "questions/questions"
+            ]
+        }
+    ],
+    "navigateToMiniProgramAppIdList": [
+        "wx4fbdce7b578060bf"
+    ],
+    "sitemapLocation": "sitemap.json"
+}

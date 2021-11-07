@@ -1,0 +1,19 @@
+{
+    "usingComponents": {
+        "guide-top": "/components/guide-top/guide-top",
+        "star": "/components/star/star",
+        "process": "/components/process/process",
+        "tabs": "/components/tabs/tabs",
+        "show-tip": "/components/show-tip/show-tip",
+        "pub": "/components/pub/pub",
+        "float-btn": "/components/float-btn/float-btn",
+        "nav": "/components/nav/nav",
+        "tarot": "/components/tarot/tarot",
+        "lucky-pop": "/components/lucky-pop/lucky-pop",
+        "constellation-list": "/components/constellation-list/list",
+        "reward-pop": "/components/reward-pop/reward-pop",
+        "skeleton": "/components/skeleton/skeleton",
+        "xz-extend": "/components/xz-extend/xz-extend"
+    },
+    "navigationStyle": "custom"
+}

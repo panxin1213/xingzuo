@@ -1,0 +1,36 @@
+<view class="goods-box">
+    <view class="title">
+        <view class="left">
+            <image class="fire-icon" mode="widthFix" src="/images/goods/goods_fire.png"></image>
+            <view class="main-title">二狗星座优选</view>
+            <view class="sub-title">近期大家在买</view>
+        </view>
+        <view class="right">
+            <button catchtap="moreGoods" class="btn more-btn" hoverClass="btn-act">查看更多
+        <image class="more-icon" mode="widthFix" src="/images/goods/goods_more.png"></image>
+            </button>
+        </view>
+    </view>
+    <view class="goods-list">
+        <view catchtap="buyGoods" class="goods" data-item="{{item}}" wx:for="{{goods}}" wx:key="index">
+            <view>
+                <image class="goods-img" mode="widthFix" src="{{item.image_url}}"></image>
+            </view>
+            <view class="goods-info">
+                <text class="name">{{item.title}}</text>
+                <view class="bottom">
+                    <view class="price">
+                        <span class="rmb">￥</span>{{item.price}}
+          </view>
+                    <view class="tag-list">
+                        <view class="tag {{childItem.cls}}" wx:for="{{item.tag}}" wx:for-item="childItem">{{childItem.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view catchtap="moreGoods" class="more-box" hoverClass="more-act">
+            <text class="more">查看更多</text>
+            <image class="more-icon" mode="widthFix" src="/images/goods/goods_more.png"></image>
+        </view>
+    </view>
+</view>

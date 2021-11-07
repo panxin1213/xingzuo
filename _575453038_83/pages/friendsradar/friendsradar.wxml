@@ -1,0 +1,42 @@
+<view class="container">
+    <image class="title" src="/images/friendsradar/rada_title_bg.png" style="margin-top:{{top}}px;"></image>
+    <view class="radar-wrap">
+        <radar bind:edit="modifyInfo" bind:onefrguide="onefrGuideHandle" bind:rendered="radarRender" bind:showdetail="showMatchDetail" bind:shownofrguide="nofrGuideHandle" updatedata="{{updateFr}}" usex="{{usex}}" ustatus="{{ustatus}}"></radar>
+    </view>
+    <button catchtap="modifyInfo" class="btn edit-btn" hoverClass="btn-act" style="top:{{btnTop}};" wx:if="{{info}}">编辑资料</button>
+    <text class="tips">好友接受邀请后，点击头像即可查看详细分析</text>
+    <button bindtap="editInfo" class="btn icon-share-2" hoverClass="btn-act" wx:if="{{!info}}">邀请好友匹配</button>
+    <block wx:elif="{{info&&!auth2}}">
+        <button catchtap="getUserProfile" class="btn icon-share-2" hoverClass="btn-act" wx:if="{{canIUseGetUserProfile}}">邀请好友匹配</button>
+        <button bindgetuserinfo="getUserInfo" class="btn icon-share-2" hoverClass="btn-act" openType="getUserInfo" wx:else>邀请好友匹配</button>
+    </block>
+    <button bindtap="generateShareCode" class="btn icon-share-2" hoverClass="btn-act" wx:if="{{info&&auth2}}">邀请好友匹配</button>
+    <view class="fast-wrap" wx:if="{{info}}">
+        <image class="tit-img" src="/images/friendsradar/radar_match_title_bg.png"></image>
+        <view class="xz-wrap">{{star}}</view>
+        <view class="xz-list-wrap" wx:if="{{fast.length>0}}">
+            <scroll-view bindscroll="scroll" class="scroll-wrap" scrollX="true">
+                <view catchtap="showMatchDetail" class="scroll-box" data-id="{{item.id}}" key="{{index}}" wx:for="{{fast}}">
+                    <image class="box-img {{item.sex=='1'?'b':'r'}}" src="{{item.head}}"></image>
+                    <text class="box-txt">{{item.nickname}}</text>
+                </view>
+            </scroll-view>
+            <view class="shadow-r">
+                <view class="total-fr">
+                    <text class="p">共{{fast.length}}位</text>
+                    <text class="p">好友</text>
+                </view>
+            </view>
+        </view>
+        <view class="none-fr" wx:else>还没有{{star}}的好友噢，去
+      <button catchtap="subscribe" class="invite-btn" hoverClass="invite-btn-act" openType="share" wx:if="{{auth2}}">邀请好友</button>
+            <block wx:else>
+                <button catchtap="getUserProfile" class="invite-btn" hoverClass="invite-btn-act" wx:if="{{canIUseGetUserProfile}}">邀请好友</button>
+                <button bindgetuserinfo="getUserInfo" class="invite-btn" hoverClass="invite-btn-act" openType="getUserInfo" wx:else>邀请好友</button>
+            </block>
+        </view>
+    </view>
+    <dialog auth="{{auth2}}" bind:generatesharecode="generateShareCode" bind:gotauth="gotAuth" bind:rejectauth="rejectAuth" bind:showeditdialog="editInfo" bind:submit="submitInfo" editData="{{editData}}" edit_type="{{edit_type}}" id="dialog" info="{{info}}" user_type="0"></dialog>
+    <show-tip msg="{{msg}}"></show-tip>
+    <reward-pop bind:got="toWelfare"></reward-pop>
+</view>

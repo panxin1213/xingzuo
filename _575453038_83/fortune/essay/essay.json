@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "float-btn": "/components/float-btn/float-btn",
+        "nav": "/components/nav/nav",
+        "pub": "/components/pub/pub",
+        "tarot": "/components/tarot/tarot",
+        "skeleton": "/components/skeleton/skeleton"
+    },
+    "navigationStyle": "custom"
+}

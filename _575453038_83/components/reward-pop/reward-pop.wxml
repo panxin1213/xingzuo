@@ -1,0 +1,13 @@
+<view catchtouchmove="stop" class="reward-popup" wx:if="{{sign7d=='1'&&show}}">
+    <view class="box">
+        <image class="bg" src="/images/welfare/pop_reward_bg.png"></image>
+        <view class="content">
+            <text class="title">100星运豆</text>
+            <image class="icon" src="/images/welfare/pop_reward_star.png"></image>
+            <text class="tips-p">您已累计登录7天，激活了惊喜礼包</text>
+            <text class="tips-b">请到<text class="i">「福利社」</text>查看哦~</text>
+            <button catchtap="close" class="btn" hoverClass="btn-act">开心收下</button>
+        </view>
+        <view catchtap="close" class="icon-circle-close" hoverClass="icon-circle-close-act"></view>
+    </view>
+</view>

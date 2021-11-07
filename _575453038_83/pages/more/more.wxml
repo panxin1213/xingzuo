@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="more-wrap">
+        <nav bind:setfixtop="setfixtop" class="nav-wrap" p_b="0" position="static" title=""></nav>
+        <view class="news">
+            <view class="ext-tit">星鲜事</view>
+            <view class="news-inner">
+                <view bindtap="toOtherminiPro" class="topic t-l" data-id="0">
+                    <image class="img" src="{{img_api}}/more/mrqw.png"></image>
+                </view>
+                <view bindtap="toOtherminiPro" class="topic t-r" data-id="1">
+                    <image class="img" src="{{img_api}}/more/sexz.png"></image>
+                </view>
+                <view bindtap="toOtherminiPro" class="topic b-l" data-id="2">
+                    <image class="img" src="{{img_api}}/more/qgfx.png"></image>
+                </view>
+                <view bindtap="toOtherminiPro" class="topic b-r" data-id="3">
+                    <image class="img" src="{{img_api}}/more/xxxt.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="group-stats">
+            <view class="ext-tit">群友星座</view>
+            <view class="group-stats-inner">
+                <view class="inner-top">
+                    <view class="group-stats-item">
+                        <image class="icon-1" src="/images/icon/statistical_icon_rank.png"></image>统计群友星座</view>
+                    <view class="group-stats-item">
+                        <image class="icon-2" src="/images/icon/statistical_icon_fish.png"></image>每日锦鲤群友</view>
+                    <view class="group-stats-item">
+                        <image class="icon-3" src="/images/icon/statistical_icon_topic.png"></image>破冰新话题</view>
+                </view>
+                <button class="group-stats-btn" data-type="4" id="shareToGroup3" openType="share">
+                    <image class="img" mode="widthFix" src="{{img_api}}/groupstats/statistical_banner.png"></image>
+                </button>
+                <button class="btn icon-share-2" data-type="4" hoverClass="btn-act" id="shareToGroup1" openType="share">转发到群 查看群友星座统计</button>
+            </view>
+        </view>
+    </view>
+</view>

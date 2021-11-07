@@ -1,0 +1,3 @@
+<view class="process-bg">
+    <view class="porcess-inner" style="width:{{percent/100*150}}rpx;background:{{bg}};">{{percent}}%</view>
+</view>

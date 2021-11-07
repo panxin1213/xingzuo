@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "nav": "/components/nav/nav",
+        "dialog": "/components/dialog/dialog",
+        "show-tip": "/components/show-tip/show-tip",
+        "percent": "/groupStatistics/components/percent/percent"
+    },
+    "backgroundColor": "#FFD6EC",
+    "enablePullDownRefresh": true
+}

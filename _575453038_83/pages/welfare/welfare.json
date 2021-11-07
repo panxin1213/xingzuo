@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "nav": "/components/nav/nav",
+        "sign-in-box": "/components/sign-in-box/sign-in-box",
+        "pub": "/components/pub/pub",
+        "reward-pop": "/components/reward-pop/reward-pop",
+        "show-tip": "/components/show-tip/show-tip"
+    },
+    "backgroundColor": "#f7f7f7"
+}

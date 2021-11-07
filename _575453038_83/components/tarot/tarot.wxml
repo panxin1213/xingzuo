@@ -1,0 +1,17 @@
+<view class="bottom-box {{border?'box-border':''}}" style="width:{{width}}rpx;">
+    <view class="bottom-title">
+        <image class="bottom-tit-img" mode="aspectFill" src="/images/detail_icon_star.png"></image>
+        <text class="left-text">{{title||'塔罗解惑'}}</text>
+        <text>信念是运势之缘</text>
+    </view>
+    <view class="bottom-content">
+        <view bindtap="tarotService" class="item-content" data-gif="{{item.guide_gif}}" data-id="{{item.id}}" data-linkthumb="{{item.link_thumb}}" data-title="{{item.title}}" wx:for="{{tarotList}}" wx:key="index">
+            <image class="tarot-image" mode="aspectFit" src="{{item.image_url}}"></image>
+            <text>{{item.title}}</text>
+        </view>
+        <view bindtap="tarotService" class="item-content" data-id="0" wx:if="{{more}}">
+            <image class="tarot-image" mode="aspectFit" src="/images/detail_icon_more.png"></image>
+            <text>更多问题解答</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,1 @@
+<view class="shine" style="height: {{heightIsArray?height[index]:height}}; width: {{widthIsArray?width[index]:width}}; background: {{background}}; margin-bottom: {{marginBottom}}; margin-right: {{marginRight}}; margin-top: {{marginTop}}; border-radius: {{borderRadius}}" wx:for="{{rowArray}}" wx:key="index"></view>

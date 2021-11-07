@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "nav": "/components/nav/nav",
+        "tarot": "/components/tarot/tarot",
+        "pub": "/components/pub/pub"
+    },
+    "navigationStyle": "custom",
+    "disableScroll": true
+}

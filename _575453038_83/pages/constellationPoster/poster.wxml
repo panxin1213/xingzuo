@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="swiper-wrap">
+        <view bindtap="toPre" class="pre" hoverClass="btn-active"></view>
+        <swiper bindchange="handleChange" circular="{{true}}" class="swiper" current="{{cur}}" indicatorDots="{{true}}">
+            <swiper-item class="swiper-item" key="{{index}}" wx:for="{{posterList}}">
+                <view class="item-inner">
+                    <image class="img poster-img" mode="aspectFit" src="{{item}}"></image>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view bindtap="toNext" class="next" hoverClass="btn-active"></view>
+    </view>
+    <view class="btn-wrap">
+        <view class="btn-inner">
+            <button catchtap="save" class="btn btn-l save-poster" hoverClass="btn-act" wx:if="{{auth!='0'}}">保存发朋友圈</button>
+            <button bindopensetting="openSetting" class="btn btn-l save-poster" hoverClass="btn-act" openType="openSetting" wx:else>保存发朋友圈</button>
+            <button class="btn btn-r share-poster" hoverClass="btn-act" openType="share">一键分享好友</button>
+        </view>
+    </view>
+    <view bindtouchstart="hideMask" class="mask" wx:if="{{new}}">
+        <image class="img" src="/images/topic/topic_guide.png"></image>
+        <text class="tit">左右划动，切换图片</text>
+    </view>
+</view>

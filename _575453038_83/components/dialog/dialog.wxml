@@ -1,0 +1,63 @@
+<view class="dialog-wrap" wx:if="{{show}}">
+    <view class="inner tips-inner" wx:if="{{onlyShow}}">
+        <image class="tips-top-bg" src="/images/friendsradar/radar_match_pop_title.png"></image>
+        <view class="tips-tip">好友接受邀请后，免费查看以下内容：</view>
+        <view class="tips-con">星座之间的配对指数</view>
+        <view class="tips-con">星座之间的相处模式</view>
+        <view class="tips-con">星座之间的主被动关系</view>
+        <view class="tips-con">星座之间的恋爱注意事项<text class="s-tip">(男女配对)</text>
+        </view>
+        <view style="padding-top:30rpx;">
+            <button bindtap="generateShareCode" class="btn tips-btn" hoverClass="btn-act" id="frGuideType0Btn1" wx:if="{{info&&user_auth}}">立即邀请好友</button>
+            <button bindtap="showEditDialog" class="btn tips-btn" hoverClass="btn-act" id="frGuideType0Btn2" wx:else>立即邀请好友</button>
+        </view>
+        <view bindtap="close" class="icon-circle-close" hoverClass="icon-circle-close-act"></view>
+    </view>
+    <view class="inner" wx:else>
+        <view class="head-img">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <text class="tips" wx:if="{{cls!='groupstats'}}">星座配对打分需要你的个人信息噢~</text>
+        <view class="form-item">
+            <text class="label">性别</text>
+            <view class="input sex-input">
+                <view catchtap="radioChange" class="radio" data-id="1" style="margin-right:54rpx;">
+                    <i class="icon {{sex=='1'?'act':''}} {{cls}}"></i>
+                    <text class="txt">男生</text>
+                </view>
+                <view catchtap="radioChange" class="radio" data-id="2">
+                    <i class="icon {{sex=='2'?'act':''}} {{cls}}"></i>
+                    <text class="txt">女生</text>
+                </view>
+            </view>
+        </view>
+        <view class="form-item">
+            <text class="label">生日</text>
+            <view class="input">
+                <picker bindchange="bindDateChange" end="{{enddate}}" headerText="出生日期（新历）" mode="date" start="1900-01-01" value="{{birth}}">
+                    <view class="picker">{{birth?util.formatDate(birth):'请选择生日'}}<i class="i {{cls}}"></i>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="form-item">
+            <text class="label">星座</text>
+            <text class="input">{{constellation}}</text>
+        </view>
+        <button bindtap="submit" class="btn {{cls}}" data-id="1" hoverClass="btn-act" wx:if="{{user_auth}}">确定</button>
+        <block wx:else>
+            <button bindtap="getUserProfile" class="btn {{cls}}" data-id="2" hoverClass="btn-act" wx:if="{{canIUseGetUserProfile}}">确定</button>
+            <button bindgetuserinfo="getUserInfo" class="btn {{cls}}" data-id="2" hoverClass="btn-act" openType="getUserInfo" wx:else>确定</button>
+        </block>
+        <view bindtap="close" class="icon-circle-close" hoverClass="icon-circle-close-act"></view>
+    </view>
+</view>
+<wxs module="util">
+var formatDate = (function(str) {
+    var a = str.split('-');
+    return (a[(0)] + '年' + a[(1)] + '月' + a[(2)] + '日')
+});
+module.exports = ({
+    formatDate: formatDate,
+});
+</wxs>

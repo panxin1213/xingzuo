@@ -1,0 +1,53 @@
+<view class="radar">
+    <view class="radar-bg">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+    </view>
+    <view class="scan"></view>
+    <view class="inner r5">
+        <text class="score">{{'<'}}50分</text>
+        <view bindtap="showDetail" class="fr-head {{item.sex=='1'?'b':'r'}}" data-item="{{item}}" style="background:url({{item.head}})center center no-repeat;background-size:100%;top:{{item.y}}rpx;left:{{item.x}}rpx;" wx:for="{{list5}}" wx:key="l5-{{index}}"></view>
+    </view>
+    <view class="inner r4">
+        <text class="score">70分</text>
+        <view bindtap="showDetail" class="fr-head {{item.sex=='1'?'b':'r'}}" data-item="{{item}}" style="background:url({{item.head}})center center no-repeat;background-size:100%;top:{{item.y}}rpx;left:{{item.x}}rpx;" wx:for="{{list4}}" wx:key="l4-{{index}}"></view>
+    </view>
+    <view class="inner r3">
+        <text class="score">80分</text>
+        <view bindtap="showDetail" class="fr-head {{item.sex=='1'?'b':'r'}}" data-item="{{item}}" style="background:url({{item.head}})center center no-repeat;background-size:100%;top:{{item.y}}rpx;left:{{item.x}}rpx;" wx:for="{{list3}}" wx:key="l3-{{index}}"></view>
+    </view>
+    <view class="inner r2">
+        <text class="score">90分</text>
+        <view bindtap="showDetail" class="fr-head {{item.sex=='1'?'b':'r'}}" data-item="{{item}}" style="background:url({{item.head}})center center no-repeat;background-size:100%;top:{{item.y}}rpx;left:{{item.x}}rpx;" wx:for="{{list2}}" wx:key="l2-{{index}}"></view>
+    </view>
+    <view class="inner r1">
+        <text class="score">100分</text>
+        <view bindtap="showDetail" class="fr-head {{item.sex=='1'?'b':'r'}}" data-item="{{item}}" style="background:url({{item.head}})center center no-repeat;background-size:100%;top:{{item.y}}rpx;left:{{item.x}}rpx;" wx:for="{{list1}}" wx:key="l1-{{index}}"></view>
+    </view>
+    <view bindtap="showFrGuide" class="guide-0" id="frGuideType0Btn" wx:if="{{g0}}">
+        <view class="fr-head b">
+            <image class="head-img" src="/images/friendsradar/rata_default_head.png"></image>
+        </view>
+        <image class="guide-hand" src="/images/friendsradar/hand_guide.png"></image>
+    </view>
+    <view catchtap="editInfo" class="me">
+        <view class="me-img {{usex}}">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+    </view>
+    <block wx:if="{{g1}}">
+        <view catchtouchmove="stop" class="mask"></view>
+        <view catchtouchmove="stop" class="inner guide-1 {{one.r}}">
+            <view class="fr-head {{one.sex=='1'?'b':'r'}}" style="background:url({{one.head}})center center no-repeat;background-size:100%;top:{{one.y}}rpx;left:{{one.x}}rpx;">
+                <image class="guide-hand" src="/images/friendsradar/hand_guide.png"></image>
+            </view>
+        </view>
+        <view catchtouchmove="stop" class="mask-inner-wrap">
+            <view class="tips">点击好友头像查看匹配详情哦</view>
+            <button bindtap="oneFrGuide" class="btn" hoverClass="btn-act" id="frGuideType1Btn">我知道了</button>
+        </view>
+    </block>
+</view>

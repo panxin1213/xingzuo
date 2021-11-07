@@ -1,0 +1,5 @@
+<i class="star {{type}} {{count>=1?'':'default'}}"></i>
+<i class="star {{type}} {{count>=2?'':'default'}}"></i>
+<i class="star {{type}} {{count>=3?'':'default'}}"></i>
+<i class="star {{type}} {{count>=4?'':'default'}}"></i>
+<i class="star {{type}} {{count>=5?'':'default'}}"></i>

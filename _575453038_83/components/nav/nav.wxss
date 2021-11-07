@@ -1,0 +1,34 @@
+.fix-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 98;
+    background: inherit;
+    background-color: inherit;
+    height: auto;
+    min-height: unset;
+}
+
+.navigate-box {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 34rpx;
+    font-weight: 700;
+    margin-bottom: 24rpx;
+}
+
+.navigate-box .tit {
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.guide-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}

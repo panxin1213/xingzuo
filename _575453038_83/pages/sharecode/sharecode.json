@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "nav": "/components/nav/nav"
+    },
+    "navigationStyle": "default",
+    "navigationBarTitleText": "好友配对",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+}

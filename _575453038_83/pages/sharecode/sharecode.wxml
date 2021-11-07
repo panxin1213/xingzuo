@@ -1,0 +1,11 @@
+<view class="box-wrap">
+    <view class="sharebox">
+        <image class="share-img" mode="widthFix" src="{{src}}"></image>
+        <view class="tips">你的专属配对二维码</view>
+    </view>
+    <view class="btn-wrap">
+        <button catchtap="save" class="btn save-btn" hoverClass="btn-act" wx:if="{{auth!='0'}}">保存朋友圈海报</button>
+        <button bindopensetting="openSetting" catchtap="subscribe" class="btn save-btn" hoverClass="btn-act" openType="openSetting" wx:else>保存朋友圈海报</button>
+        <button catchtap="subscribe" class="btn btn-share" hoverClass="btn-act" openType="share">分享到好友群</button>
+    </view>
+</view>

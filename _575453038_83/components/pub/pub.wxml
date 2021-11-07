@@ -1,0 +1,112 @@
+<view catchtouchmove="stop" class="pub" wx:if="{{show}}">
+    <view class="wrap {{cls}}">
+        <view class="inner" style="padding: 39rpx 0 24rpx 0" wx:if="{{type=='0'}}">
+            <view class="tit">进入会话窗口点击右下角卡片</view>
+            <image class="img border" mode="widthFix" src="{{img_host}}/xz/ad/click.png" style="border:none;"></image>
+            <button bindcontact="handleTarotContact" class="btn tarot-btn" data-id="{{-1}}" hoverClass="btn-act" id="to-service" openType="contact" sendMessageImg="{{img_host}}/xz/ad/click_me.png" sendMessagePath="pages/index/index?id={{id?id:0}}" sendMessageTitle="关注公众号，开启运势提醒服务" showMessageCard="{{true}}" style="margin-top:31rpx;">
+          马上关注<i></i>
+            </button>
+            <view bindtap="close" class="cancle" id="to-service-pass">关注公众号，好运加倍噢</view>
+        </view>
+        <view class="inner" style="padding:71rpx 0 60rpx 0;" wx:if="{{type=='1'}}">
+            <image class="l-img" mode="widthFix" src="/images/dialog/gzh_bg_left.png"></image>
+            <image class="r-img" mode="widthFix" src="/images/dialog/gzh_bg_right.png"></image>
+            <image class="s-img" mode="widthFix" src="/images/dialog/gzh_bg_img.png"></image>
+            <text class="tit0">开启公众号提醒</text>
+            <text class="tit_b">不错过作何一个预见未来的机会</text>
+            <view class="p">
+                <i></i>
+                <text>今日运势提醒</text>
+            </view>
+            <view class="p">
+                <i></i>
+                <text>解决情感困惑</text>
+            </view>
+            <view class="p">
+                <i></i>
+                <text>星座达人解读</text>
+            </view>
+            <button bindcontact="handleTarotContact" class="btn tarot-btn" data-id="{{0}}" hoverClass="btn-act" id="to-service" openType="contact" sendMessageImg="{{img_host}}/xz/ad/click_me.png" sendMessagePath="pages/index/index?id=0" sendMessageTitle="关注公众号，开启运势提醒服务" showMessageCard="{{true}}" style="margin-top:31rpx;">
+          马上关注<i></i>
+            </button>
+            <view bindtap="close" class="cancle" id="to-service-pass">遗憾错过</view>
+        </view>
+        <block wx:if="{{type=='2'}}">
+            <view class="inner" style="padding:28rpx 0 34rpx 0;">
+                <view class="tarot-tit">如下图操作，即可提问</view>
+                <view class="tit">
+                    <i style="font-size:28rpx;">{{title}}</i>
+                </view>
+                <image class="img" mode="widthFix" src="{{gif}}" style="margin-top:21rpx;"></image>
+            </view>
+            <button bindcontact="handleTarotContact" class="btn tarot-btn" data-id="{{id}}" hoverClass="btn-act" openType="contact" sendMessageImg="{{linkthumb}}" sendMessagePath="pages/index/index?id={{id}}" sendMessageTitle="{{title}}" showMessageCard="{{true}}" style="width:390rpx !important;">
+        马上塔罗解惑<i></i>
+            </button>
+        </block>
+        <block wx:if="{{type=='3'}}">
+            <view class="inner" style="padding:41rpx 0 47rpx 0;">
+                <view class="tit">回复<i style="font-size:36rpx;">公众号</i>
+                </view>
+                <view class="tit-b">获取更多占卜，解答你的疑惑</view>
+                <image class="img" mode="widthFix" src="{{img_api}}/service_guide/service_guide2.png"></image>
+            </view>
+            <button bindcontact="handleTarotContact" bindtap="closeHandle" class="btn tarot-btn" data-id="-3" hoverClass="btn-act" openType="contact">去回复<i></i>
+            </button>
+        </block>
+        <block wx:if="{{type=='4'}}">
+            <view class="inner" style="padding:28rpx 0 34rpx 0;">
+                <view class="tarot-tit">如下图操作，即可积分兑换好礼</view>
+                <image class="img" mode="widthFix" src="{{gif}}" style="margin-top:21rpx;"></image>
+            </view>
+            <button bindcontact="handleTarotContact" class="btn tarot-btn" data-id="{{id}}" hoverClass="btn-act" openType="contact" sendMessageImg="{{linkthumb}}" sendMessagePath="pages/index/index?id={{id}}" sendMessageTitle="{{title}}" showMessageCard="{{true}}" style="width:390rpx !important;">
+        马上兑换礼物<i></i>
+            </button>
+        </block>
+        <block wx:if="{{type=='5'}}">
+            <view class="inner" style="padding:28rpx 0 34rpx 0;">
+                <view class="tarot-tit">进入会话窗口点击右下角图片</view>
+                <view class="tit">
+                    <i style="font-size:28rpx;">获取测试结果</i>
+                </view>
+                <image class="img" mode="widthFix" src="{{gif}}" style="margin-top:21rpx;"></image>
+            </view>
+            <button bindcontact="handleTarotContact" class="btn tarot-btn" data-id="{{id}}" hoverClass="btn-act" openType="contact" sendMessageImg="{{linkthumb}}" sendMessagePath="pages/index/index?id={{id}}" sendMessageTitle="{{title}}" showMessageCard="{{true}}" style="width:390rpx !important;">
+        查看测试结果<i></i>
+            </button>
+        </block>
+        <block wx:if="{{type=='6'}}">
+            <view class="inner" style="padding:28rpx 0 34rpx 0;">
+                <view class="tarot-tit">如下图操作，查看能量物</view>
+                <view class="tit">
+                    <i style="font-size:28rpx;">{{title}}</i>
+                </view>
+                <image class="img" mode="widthFix" src="{{gif}}" style="margin-top:21rpx;"></image>
+            </view>
+            <button bindcontact="handleTarotContact" class="btn tarot-btn" data-id="{{id}}" hoverClass="btn-act" openType="contact" sendMessageImg="{{linkthumb}}" sendMessagePath="pages/index/index?id={{id}}" sendMessageTitle="{{title}}" showMessageCard="{{true}}" style="width:390rpx !important;">
+        马上查看<i></i>
+            </button>
+        </block>
+        <block wx:if="{{type=='7'}}">
+            <view class="inner" style="padding:28rpx 0 34rpx 0;">
+                <view class="tarot-tit">如下图操作，查看更多</view>
+                <image class="img" mode="widthFix" src="{{gif}}" style="margin-top:21rpx;"></image>
+            </view>
+            <button bindcontact="handleTarotContact" class="btn tarot-btn" data-id="{{id}}" hoverClass="btn-act" openType="contact" sendMessageImg="{{linkthumb}}" sendMessagePath="pages/index/index?id={{id}}" sendMessageTitle="{{title}}" showMessageCard="{{true}}" style="width:390rpx !important;">
+        马上查看<i></i>
+            </button>
+        </block>
+        <block wx:if="{{type=='8'}}">
+            <view class="inner" style="padding:28rpx 0 34rpx 0;">
+                <view class="tarot-tit">如下图操作</view>
+                <view class="tit">
+                    <i style="font-size:28rpx;">{{title}}</i>
+                </view>
+                <image class="img" mode="widthFix" src="{{gif}}" style="margin-top:21rpx;"></image>
+            </view>
+            <button bindcontact="handleTarotContact" class="btn tarot-btn" data-id="{{id}}" hoverClass="btn-act" openType="contact" sendMessageImg="{{linkthumb}}" sendMessagePath="pages/index/index?id={{id}}" sendMessageTitle="{{title}}" showMessageCard="{{true}}" style="width:390rpx !important;">
+        马上查看<i></i>
+            </button>
+        </block>
+        <view bindtap="close" class="icon-circle-close" hoverClass="icon-circle-close-act"></view>
+    </view>
+</view>

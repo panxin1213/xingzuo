@@ -1,0 +1,8 @@
+<view class="tips-mask" wx:if="{{txt}}">
+    <view class="tips-inner">
+        <view class="inner-wrap">
+            <image class="inner-bg" src="{{type===0?'/images/img_cry.png':'/images/img_thank.png'}}"></image>
+            <text class="inner-txt">{{txt}}</text>
+        </view>
+    </view>
+</view>

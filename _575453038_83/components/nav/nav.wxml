@@ -1,0 +1,10 @@
+<view class="fix-top" id="fix-top" style="padding-top:{{m_t}}px;position:{{position}};padding-bottom:{{p_b}}rpx;background:{{bg}};">
+    <view class="navigate-box" style="height:{{m_h}}px;line-height:{{m_h}}px;">
+        <view class="tit" style="{{titStyle}};">
+      {{title}}
+      <slot name="btn"></slot>
+        </view>
+    </view>
+    <slot name=""></slot>
+    <slot name="tabs"></slot>
+</view>

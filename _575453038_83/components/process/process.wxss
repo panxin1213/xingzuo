@@ -1,0 +1,18 @@
+.process-bg {
+    background: #eaeaea;
+    width: 150rpx;
+}
+
+.porcess-inner,.process-bg {
+    height: 26rpx;
+    border-radius: 13rpx;
+}
+
+.porcess-inner {
+    color: #fff;
+    font-size: 20rpx;
+    font-weight: 700;
+    line-height: 26rpx;
+    text-align: right;
+    padding-right: 6rpx;
+}

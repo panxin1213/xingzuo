@@ -1,0 +1,29 @@
+<view catchtouchmove="stop" class="pop-box" wx:if="{{show}}">
+    <view class="container {{close}}">
+        <view class="content">
+            <view class="title-box">
+                <image class="title-bg" mode="aspectFill" src="{{img_host}}/xz/day0{{day}}.png"></image>
+                <text class="sec-title">/{{secTitle}}/</text>
+            </view>
+            <view class="lucky-image-box">
+                <view class="lucky-item" wx:for="{{luckyList}}" wx:key="index">
+                    <image class="lucky-image" mode="aspectFill" src="/images/xz_head/{{item.head_url}}"></image>
+                    <view class="lucky-name">{{item.c_name}}</view>
+                </view>
+            </view>
+            <button class="btn share-btn" data-type="3" hoverClass="btn-act" id="luckyButton" openType="share">
+                <text>转发接收好运</text>
+            </button>
+            <image class="bottom-back" mode="widthFix" src="/images/luckday_bg_bottom.png"></image>
+        </view>
+        <view class="save-btn-box">
+            <button catchtap="saveHandle" class="save-btn" hoverClass="save-btn-act" id="saveLuckyImg" wx:if="{{auth!='0'}}">
+                <text class="save-btn-text">保存好运图片</text>
+            </button>
+            <button bindopensetting="openSetting" class="save-btn" hoverClass="save-btn-act" openType="openSetting" wx:else>
+                <text class="save-btn-text">保存好运图片</text>
+            </button>
+        </view>
+        <view bindtap="close" class="icon-circle-close" hoverClass="icon-circle-close-act"></view>
+    </view>
+</view>

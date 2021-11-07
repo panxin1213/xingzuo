@@ -1,0 +1,13 @@
+<view class="container">
+    <nav bg="{{navShow?'#0d0d0dcc':'none'}}" class="nav-wrap" p_b="0" position="static" titStyle="display:flex;justify-content: center;align-items: center;height:100%;" title="">
+        <view bindtap="back" class="back" hoverClass="back-act" slot="btn">
+            <text class="txt">返回</text>
+        </view>
+    </nav>
+    <view class="act-end">活动已结束!</view>
+</view>
+<wxs module="util">
+module.exports.getDay = (function(d) {
+    return (7 - Number(d))
+});
+</wxs>

@@ -1,0 +1,41 @@
+<view class="extend">
+    <slot></slot>
+    <view class="tab-wrap">
+        <view catchtap="chooesExtend" class="tab-item {{act==index?item.id:''}}" data-idx="{{index}}" style="{{util.format(tabActColor,tabColor,'color',act==index)}} {{tabItemStyle}}" wx:for="{{typeList}}">{{item.name}}<i class="tab-bottom" style="{{util.format(tabActColor,tabColor,'bg',act==index)}}"></i>
+        </view>
+    </view>
+    <swiper autoplay="{{autoplay}}" bindanimationfinish="finished" bindchange="change" circular="{{true}}" current="{{current}}" duration="300" nextMargin="{{nextMargin}}" previousMargin="{{preMargin}}" style="height:460rpx;">
+        <swiper-item wx:for="{{contentList}}" wx:key="{{item.id}}">
+            <view class="block {{item.id}} {{bgStyle?'':'white'}}">
+                <image class="tit-bg" mode="widthFix" src="/images/{{item.bg}}.png"></image>
+                <text class="tit">{{xz_name}}{{item.name}}</text>
+                <text class="tit tit-b">{{xz}} {{item.en_name}}</text>
+                <text class="con">{{item.content}}</text>
+                <view class="ext-btn-wrap">
+                    <button bindtap="essayDetail" class="btn ext-btn" data-id="{{item.id}}" hoverClass="btn-act">
+                        <text class="ext-btn-t">查看详情</text>
+                    </button>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<wxs module="util">
+function format(actColor, color, type, flag) {
+    if (!color) {
+        return ('')
+    };
+    var str = flag ? actColor : color;
+    switch (type) {
+        case 'bg':
+            str = str ? 'background:' + str : '';
+            return (str + ';border-right-color:rgba(37, 25, 69, 0.1);');
+        case 'color':
+            str = str ? 'color:' + str : '';
+            return (str + ';border-right-color:rgba(37, 25, 69, 0.3);');
+        default:
+            return ('');
+    }
+};
+module.exports.format = format;
+</wxs>

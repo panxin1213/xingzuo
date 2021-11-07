@@ -1,0 +1,10 @@
+<view class="con-wrap">
+    <image class="index-banner" mode="widthFixed" src="/images/home_banner.png"></image>
+    <view class="inner-wrap">
+        <button :key="{{index}}" bindtap="toResult" class="item" id="{{item.id}}" wx:for="{{list}}">
+            <image class="img" src="/images/xz_head/{{item.url}}"></image>
+            <text class="name">{{item.name}}</text>
+            <text class="time">{{item.time}}</text>
+        </button>
+    </view>
+</view>

@@ -1,0 +1,15 @@
+<view class="moveable-wrap" style="top:{{t}};width:{{w}};height:{{h}};left:{{l}};right:{{r}};">
+    <movable-area style="width:{{w}};height:{{h}};">
+        <movable-view bindtap="showShare" class="{{type=='luckyBtn'?'bigMoveBtn':'movebtn'}}" direction="all" hoverClass="active" style="top:{{t}};left:{{l}};" x="{{x||init_x}}" y="{{y||init_y}}">
+            <button catchtap="pubHandle" class="pub-btn" hoverClass="pub-btn-act" id="pub-btn" wx:if="{{type=='pub'}}"></button>
+            <button catchtap="luckyHandle" class="lucky-btn" hoverClass="lucky-btn-act" id="subscribeFloatBtn" style="right:{{o_hide?'-106rpx':'-12rpx'}};" wx:elif="{{type=='luckyBtn'}}">
+                <image class="lucky-img" mode="aspeciFit" src="{{icon?icon:img_api+'/lucky_fl_default.png'}}"></image>
+            </button>
+            <button class="mentalTestBtn" hoverClass="mentalTestBtnAct" id="shareTestBtn" openType="share" wx:elif="{{type=='mentalTestBtn'}}">
+                <image class="testImage" mode="widthFix" src="../../test/images/test_ym_icon_share.png"></image>
+            </button>
+            <button class="share-btn" data-type="{{shareType}}" hoverClass="share-btn-act" id="share-btn" openType="share" wx:else></button>
+            <view class="reddot" style="right:{{o_hide?'-70rpx':'24rpx'}};" wx:if="{{showReddot}}">1</view>
+        </movable-view>
+    </movable-area>
+</view>

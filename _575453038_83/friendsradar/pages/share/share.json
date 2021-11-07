@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "show-tip": "/components/show-tip/show-tip"
+    },
+    "navigationStyle": "custom"
+}

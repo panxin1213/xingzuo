@@ -1,0 +1,44 @@
+<view class="sign-in-wrap">
+    <view class="star first {{d>=1?'act':''}}">
+        <view class="icon-wrap">
+            <image class="icon" src="/images/welfare/welfare_star_{{d>=1?'h':'n'}}.png"></image>
+        </view>
+        <text class="d">1天</text>
+    </view>
+    <view class="star {{d>=2?'act':''}}">
+        <view class="icon-wrap">
+            <image class="icon" src="/images/welfare/welfare_star_{{d>=2?'h':'n'}}.png"></image>
+        </view>
+        <text class="d">2天</text>
+    </view>
+    <view class="star {{d>=3?'act':''}}">
+        <view class="icon-wrap">
+            <image class="icon" src="/images/welfare/welfare_star_{{d>=3?'h':'n'}}.png"></image>
+        </view>
+        <text class="d">3天</text>
+    </view>
+    <view class="star {{d>=4?'act':''}}">
+        <view class="icon-wrap">
+            <image class="icon" src="/images/welfare/welfare_star_{{d>=4?'h':'n'}}.png"></image>
+        </view>
+        <text class="d">4天</text>
+    </view>
+    <view class="star {{d>=5?'act':''}}">
+        <view class="icon-wrap">
+            <image class="icon" src="/images/welfare/welfare_star_{{d>=5?'h':'n'}}.png"></image>
+        </view>
+        <text class="d">5天</text>
+    </view>
+    <view class="star {{d>=6?'act':''}}">
+        <view class="icon-wrap">
+            <image class="icon" src="/images/welfare/welfare_star_{{d>=6?'h':'n'}}.png"></image>
+        </view>
+        <text class="d">6天</text>
+    </view>
+    <view class="star super-star {{d>=7?'act':''}}">
+        <view class="icon-wrap">
+            <image class="icon" src="/images/welfare/welfare_star7_{{d>=7?'h':'n'}}.png"></image>
+        </view>
+        <text class="d">7天</text>
+    </view>
+</view>

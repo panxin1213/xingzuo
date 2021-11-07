@@ -1,0 +1,23 @@
+<view class="guide-top-wrap" wx:if="{{tips}}">
+    <view class="guide-tips" style="padding-right:{{right}};top:{{m_t}}px;height:{{m_h}}px;">
+        <view catchtap="showGuide" class="guide-txt" hoverClass="guide-btn-act">
+            <image class="guide-txt-bg-h" mode="widthFix" src="/images/img_addbar_h.png"></image>
+            <image class="guide-txt-bg-n" mode="widthFix" src="/images/img_addbar_n.png"></image>
+        </view>
+        <view catchtap="hideTip" class="guide-tips-close"></view>
+    </view>
+    <view catchtouchmove="stop" class="guide-mask" style="display:{{mask?'block':'none'}};"></view>
+    <view class="guide-info-wrap" style="display:{{mask?'block':'none'}};top:{{tiptop}};">
+        <view class="guide-info">
+            <i class="i" style="right:{{ir}}"></i>
+            <view class="step1">
+      点击右上角<i></i>按钮
+      <image class="tips-img" src="/images/guide_img_xz.png"></image>
+            </view>
+            <view class="step2">
+      下次查星座，微信首页下拉即可找到“二狗星座”
+    </view>
+        </view>
+        <view catchtap="hideGuide" class="guide-close" hoverClass="guide-close-act">我知道了</view>
+    </view>
+</view>

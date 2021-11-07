@@ -1,0 +1,151 @@
+.container .benefits-inner {
+    width: 690rpx;
+    background: #fff8f8;
+    box-sizing: border-box;
+    padding: 20rpx 18rpx;
+    border-radius: 30rpx;
+    margin: -10rpx auto 0;
+}
+
+.official-account-wrap {
+    padding-top: 0;
+    padding-bottom: 24rpx;
+    width: 100%;
+}
+
+.official-account {
+    width: 100%;
+    height: 84rpx;
+    background: #fff8f8;
+    border: 1px solid #ffc9c9;
+    border-radius: 45rpx;
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.official-account .btn-inner {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20rpx 0 30rpx;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.btn-inner .info {
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #fa2828;
+}
+
+.btn-inner .info::before {
+    content: "";
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAiCAYAAABIiGl0AAACzElEQVRYha2XTUgVURTHf28Us6RFlkEQWBuzKEmToFoUFCgl9Apb1KJNiwjaSa0iqE1QEBEEoS4LzI3lykUhQShIm5ACIWjVF0hudFMx/xbX9+bO3LnzYV64vLnzzpzf+Z97zn1vKnp6hNwhRZ9mVhEnkRaQhuk88zvfSXw05kMtuLkeACbMQoDagRtlwUG+iSI46kC6aCkH6SyfJqt8fLWjDLiSmWqT4iakq0jXER0mEGuG9esQaQ6F9+k6P/G/4D1IL4HOhEp3hrH1FAov0X1hyefan2rpADAbh+KftQtj24+Y4f2LtrLgVmASaUu0v5ZzeyaDiu51AuPMjVWKg6U7iF11mFexJ4BofQI0WAwstQJXooc9ipOBOHBq69tFFZ9G2hiDpRVTtlIrMO1n9llHNti0T28ULTkzDU48OGPXm69YarMODP9ML6ha8En4dj9Ysm7ntU+OUhfenA52DD2K/a3j+qivk6IcxTavTEFlKLX32QHXo0mqSRddWqmSDm3FaelNqlyr0vxUly2ogkqdQ6gGzjqdfK1DFlwu3JvqyFEL0t+YSqeorAAylcaytcL0aHMcbJz1A/PAMnDZgaSmuqBSY/sYscKbkWleD+8DqOjJ4VNIU0gN3jaK/ciH8XW4es+xDdN9SYuIngDpLqKh3CmVozSzSNmGNBQAh/wF5dnTWq14WyfNj70FHAyQmrwqs5Qm9zmrLuxh7jcEwE83QuvhtSh1zgRH8VKANOZ+kaPUgWekOtnHxmY8QNxCzOQXVDJyn1JfUdWfGwGeN4KWQcdBVdAxpE2xNG/Y3E7L1r50cA0URuvvC6OYP/cJ9fwCpui79hagokc9lsPV3rP7tHuwC/hAsfEV2FnEsJG9A3k288AXYHcBf7mvLrVR4KUNAUMF7BaBe+sJBqPkJhBmQM8B39YbDPAAOAqMAz+AP8Bn4CHQBbwr4Yt/uibNJE0uH5IAAAAASUVORK5CYII=)no-repeat 50%;
+    background-size: auto 100%;
+    width: 30rpx;
+    height: 34rpx;
+    margin-right: 16rpx;
+    display: inline-block;
+}
+
+.official-account .info {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+}
+
+.official-account .btn {
+    width: 200rpx;
+    height: 55rpx;
+    background: linear-gradient(120deg,#ff7a39,#fa5928);
+    border-radius: 28rpx;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    animation: sacleFunc 1s linear infinite both;
+}
+
+.official-account .btn .txt {
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #fff;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.middle-banner-wrap,.official-account .btn .txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-banner-wrap {
+    padding: 0 8rpx;
+}
+
+.middle-banner-wrap .banner-box {
+    width: 290rpx;
+    height: 435rpx;
+    line-height: 0;
+}
+
+.middle-banner-wrap .banner-box:nth-of-type(even) {
+    margin-left: 36rpx;
+}
+
+.middle-banner-wrap .banner-box.btn-l {
+    margin-right: 36rpx;
+}
+
+.banner-box .banner-image {
+    width: 100%;
+}
+
+.bottom-banner {
+    padding-top: 24rpx;
+}
+
+.bottom-banner .title {
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #666;
+    line-height: 30rpx;
+    margin-bottom: 0;
+    padding-left: 40rpx;
+}
+
+.bottom-banner .banner-box {
+    width: 644rpx;
+    margin: auto;
+    background: none;
+    border: 0;
+    line-height: 0;
+}
+
+.banner-btn-act {
+    opacity: .8;
+}
+
+@keyframes sacleFunc {
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@-webkit-keyframes sacleFunc {
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.adContainer {
+    width: 690rpx;
+    margin: 20rpx auto 0;
+    border-radius: 10rpx;
+    overflow: hidden;
+}

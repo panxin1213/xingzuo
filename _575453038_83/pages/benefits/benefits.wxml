@@ -1,0 +1,29 @@
+<view class="container benefits">
+    <nav bind:setfixtop="setfixtop" class="nav-wrap" p_b="0" position="static" titStyle="color: #a171eb;" title="优惠推荐"></nav>
+    <view class="benefits-inner">
+        <view class="official-account-wrap" wx:if="{{preferenceData.top}}">
+            <button bindtap="toOtherMini" class="official-account" data-id="{{preferenceData.top.id}}" data-path="{{preferenceData.top.path}}" data-type="{{preferenceData.top.type}}" hoverClass="banner-btn-act">
+                <view class="btn-inner">
+                    <view class="info">每天提醒领红包</view>
+                    <view class="btn">
+                        <view class="txt">关注公众号</view>
+                    </view>
+                </view>
+            </button>
+        </view>
+        <view class="middle-banner-wrap" wx:if="{{preferenceData.middle&&preferenceData.middle.length>0}}">
+            <button bindtap="toOtherMini" class="banner-box" data-id="{{middleItem.id}}" data-path="{{middleItem.type===2?middleItem.path:''}}" data-position="middle" data-type="{{middleItem.type}}" hoverClass="banner-btn-act" wx:for="{{preferenceData.middle}}" wx:for-item="middleItem">
+                <image class="banner-image" mode="widthFix" src="{{middleItem.img}}"></image>
+            </button>
+        </view>
+        <view class="bottom-banner" wx:if="{{preferenceData.bottom&&preferenceData.bottom.length>0}}">
+            <text class="title">更多优惠折扣</text>
+            <button bindtap="toOtherMini" class="banner-box" data-id="{{bottomItem.id}}" data-path="{{bottomItem.type===2?bottomItem.path:''}}" data-position="bottom" data-type="{{bottomItem.type}}" hoverClass="banner-btn-act" wx:for="{{preferenceData.bottom}}" wx:for-item="bottomItem">
+                <image class="banner-image" mode="widthFix" src="{{bottomItem.img}}"></image>
+            </button>
+        </view>
+    </view>
+    <view class="adContainer">
+        <ad-custom binderror="adError" bindload="adLoad" unitId="adunit-17f98fe9ed043d31"></ad-custom>
+    </view>
+</view>
