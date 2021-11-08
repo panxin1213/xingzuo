@@ -1,18 +1,22 @@
+import Taro from '@tarojs/taro';
 import { Component } from 'react'
 import './app.scss'
+import { Login } from './common/api';
 
 class App extends Component {
 
-  componentDidMount () {}
+  componentDidMount() {
+    Login();
+  }
 
-  componentDidShow () {}
+  componentDidShow() { }
 
-  componentDidHide () {}
+  componentDidHide() { }
 
-  componentDidCatchError () {}
+  componentDidCatchError() { }
 
   // this.props.children 是将要会渲染的页面
-  render () {
+  render() {
     return this.props.children
   }
 }
