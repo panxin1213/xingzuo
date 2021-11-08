@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <include file="public/head" />
+    <title>客服管理-微信帮助插件</title>
+</head>
+
+<body>
+    <div class="wrap js-check-wrap">
+        <include file="public/tabs" />
+        <div class="common-form">
+            <form method="post" class="js-ajax-form" action="#">
+                <div class="table_list">
+                    <table width="100%" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th width="60">ID</th>
+                                <th>openid</th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>所在地</th>
+                                <th>头像</th>
+                                <th>添加时间</th>
+                                <th>最后交互时间</th>
+                                <th>是否是管理员</th>
+                                <th width="120">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <foreach name="list" item="vo">
+                                <tr>
+                                    <td>{$vo.id}</td>
+                                    <td>{$vo.openid}</td>
+                                    <td>{$vo.nickName}</td>
+                                    <td>{$vo.gender == 1 ? '男' : ($vo.gender == 2 ? '女' : '未知')}</td>
+                                    <td>{$vo.country}{$vo.province}{$vo.city}</td>
+                                    <td><img src="{$vo.avatarUrl}" style="max-width:50px;" /></td>
+                                    <td>{$vo.addtime}</td>
+                                    <td>{$vo.lastentertime}</td>
+                                    <td>{$vo.isadmin ? '是' : '否'}</td>
+                                    <td>
+                                        <a href="{:cmf_plugin_url('Wxapp://admin_index/changeadmin', ['id' => $vo.id])}">{$vo.isadmin ? '取消' : '设为'}管理员</a>
+                                    </td>
+                                </tr>
+                            </foreach>
+                        </tbody>
+                    </table>
+                    <div class="pagination">{$page}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <include file="public/scripts" />
+</body>
+
+</html>

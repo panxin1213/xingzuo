@@ -1,0 +1,350 @@
+﻿@charset "utf-8";
+
+
+.main_bd {
+    padding: 30px 30px 0;
+}
+.media_preview_area
+{
+    float: left;
+    width: 320px;
+    margin-right: 14px;
+}
+.media_preview_area .appmsg
+{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid #e7e7eb;
+    background-color: #fff;
+    color: #8d8d8d;
+    padding:25px 0 0;
+}
+.media_preview_area .appmsg .app_head
+{
+    position:relative;
+    width:290px;
+    height:160px;
+    overflow:hidden;
+    margin:0 auto 20px;
+}
+.media_preview_area .appmsg .app_head .h_title
+{
+    color:#fff;
+    line-height:30px;
+    text-indent:12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#99000000',endcolorstr = '#99000000');
+}
+.appmsg_default
+{
+    display: block;
+    color: #c0c0c0;
+    text-align: center;
+    line-height: 160px;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #ececec;
+    font-size: 16px;
+}
+.appmsg_edit_mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(229,229,229,0.85)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d9e5e5e5',endcolorstr = '#d9e5e5e5');
+    text-align: center;
+}
+.appmsg_edit_mask .edit_gray,.appmsg_edit_mask .del_gray
+{
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 100px;
+    overflow: hidden;
+    margin:70px 8px 0;
+    background: url("../images/base_weixin.png") 0 -5280px no-repeat;
+    
+}
+
+.appmsg_edit_mask .edit_gray:hover
+{
+    background: url("../images/base_weixin.png") 0 -5308px no-repeat;
+}
+
+.appmsg .appmsg_item
+{
+    position: relative;
+    padding: 20px 14px;
+    border-top: 1px solid #e7e7eb;
+    display:none;
+}
+
+.appmsg_item .appmsg_title {
+    line-height: 24px;
+    max-height: 48px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-top: 14px;
+}
+.appmsg_title a {
+    display: block;
+    color: #8d8d8d;
+    font-size:14px;
+    font-weight:400;
+}
+
+.appmsg_item .appmsg_edit_mask .edit_gray,.appmsg_edit_mask .del_gray
+{
+    margin-top:50px;
+}
+
+.appmsg_item .appmsg_edit_mask .del_gray {
+    background: url("../images/base_weixin.png") 0 -4580px no-repeat;
+}
+.appmsg_thumb.default {
+    display: block;
+    color: #c0c0c0;
+    text-align: center;
+    line-height: 160px;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #ececec;
+    font-size: 16px;
+    position:absolute;
+    right:14px;
+    width:78px;
+}
+.appmsg_item .appmsg_thumb.default {
+    line-height: 78px;
+    font-size: 14px;
+}
+.appmsg_item img
+{
+    float:right;
+}
+
+
+
+
+
+.media_edit_area {
+    display: table-cell;
+    vertical-align: top;
+    float: none;
+    width: auto;
+}
+
+.appmsg_editor {
+    position: relative;
+    padding-left: 12px;
+}
+
+.appmsg_editor .inner {
+    padding: 20px;
+    border: 1px solid #e7e7eb;
+    background-color: #f4f5f9;
+    min-height: 350px;
+    width:580px;
+}
+.appmsg_edit_item {
+    padding-bottom: 1em;
+}
+
+
+.frm_label {
+    float: left;
+    width: 5em;
+    margin-top: .3em;
+    margin-right: 1em;
+    font-size: 14px;
+}
+
+
+.appmsg_edit_item .frm_label {
+    display: block;
+    width: auto;
+    float: none;
+    margin-right: 0;
+    margin-bottom: 4px;
+}
+
+
+.frm_input_box {
+    display: inline-block;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    width: 278px;
+    font-size: 14px;
+    padding: 0 10px;
+    border: 1px solid #e7e7eb;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    background-color: #fff;
+}
+
+.appmsg_edit_item .frm_input_box {
+    display: block;
+    width: auto;
+    height: auto;
+    min-height: 30px;
+    border-color: #e7e7eb;
+}
+
+.frm_input
+{
+    font:14px;
+    line-height:30px;
+}
+
+.frm_input, .frm_textarea {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+
+
+.frm_tips, .frm_msg {
+    padding-top: 4px;
+    width: 300px;
+}
+
+.frm_msg.fail {
+    color: #e15f63;
+    font-size:12px;
+    display:none;
+}
+
+.appmsg_edit_item .title {
+    font-weight: 400;
+    font-style: normal;
+    float: left;
+}
+.appmsg_edit_item .tips {
+    color: #8d8d8d;
+}
+.l {
+    float: left;
+}
+
+
+
+.frm_radio_label, .frm_checkbox_label {
+    display: inline-block;
+    text-align: left;
+    cursor: pointer;
+    margin-right: 1em;
+    font-size:12px;
+}
+
+.icon_radio, .icon_checkbox {
+    margin-right: 3px;
+    margin-top: -2px;
+}
+
+.icon_checkbox {
+    background: url("../images/base_weixin.png") 0 -286px no-repeat;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.icon_checkbox.selected, .selected .icon_checkbox {
+    background: url("../images/base_weixin.png") 0 -312px no-repeat;
+}
+.frm_radio, .frm_checkbox {
+    position: absolute;
+    left: -999em;
+}
+.frm_tips {
+    color: #8d8d8d;
+}
+
+
+.appmsg_editor .arrow {
+    position: absolute;
+    margin-top: 0px;
+}
+
+.appmsg_editor .arrow_out {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 12px;
+    border-style: dashed;
+    border-color: transparent;
+    border-left-width: 0;
+    border-right-color: #e7e7eb;
+    border-right-style: solid;
+    top: 44px;
+    left: 0;
+}
+.appmsg_editor .arrow_in {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 12px;
+    border-style: dashed;
+    border-color: transparent;
+    border-left-width: 0;
+    border-right-color: #f4f5f9;
+    border-right-style: solid;
+    top: 44px;
+    left: 1px;
+}
+
+.create_access_primary {
+    display: block;
+    border: 2px dotted #d9dadc;
+    line-height: 60px;
+    font-size: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    height:64px;
+}
+
+.appmsg_add {
+    margin: 20px 14px;
+}
+
+.icon20_common {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 100px;
+    overflow: hidden;
+}
+
+.create_access_primary i 
+{
+    margin-top:20px;
+    cursor: pointer;
+}
+.create_access_primary:hover {
+    border-color: #b3b3b3;
+}
+.icon20_common.add_gray {
+    background: url("../images/base_weixin.png") 0 -2809px no-repeat;
+}
+
+.create_access_primary:hover .icon20_common {
+background: url("../images/base_weixin.png") 0 -2885px no-repeat;
+}
