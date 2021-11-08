@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "xingzuo",
 	"description": "星座项目",
-	"appid": "touristappid",
+	"appid": "wx95add4a980516b46",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
