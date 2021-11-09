@@ -32,12 +32,17 @@ function Request(options) {
                         "data": [...(Taro.getStorageSync('cookie') || []), ...cookies]
                     });
                 }
-                resolve(res);
+                resolve(res.data);
             }
         })
     });
 }
 
+export const getIndex = function () {
+    return Request({
+        url: _baseUrl + 'api/data/index'
+    });
+}
 
 
 export const Login = function () {
@@ -56,7 +61,7 @@ export const Login = function () {
                         }).then(res => {
                             Taro.setStorage({
                                 "key": "userinfo",
-                                "data": res.data.data.userinfo
+                                "data": res.data.userinfo
                             });
                             resolve(res);
                         }).catch(res => {
@@ -66,10 +71,8 @@ export const Login = function () {
                 }
             })
         }).then(res => {
-            console.log('success', res);
             return res;
         }).catch(res => {
-            console.log('error', res);
         }).finally(() => {
             Taro.hideLoading();
         });

@@ -69,7 +69,6 @@ App({
                         },
                         success: function(e) {
                             e.data = {"token":"724109116fcb9c928f166c6f907376fe","expire":1635945577,"uuid":"oUGPY5RNCHscIvlG9_-bCyHtNFY8","unionid":"ozerVv5Qvq5IQNulAN0mDRi-wkoI"};
-                            debugger;
                             e.data.token && (n.token = e.data.token, n.updateToken({
                                 token: e.data.token,
                                 unionid: e.data.unionid ? 1 : "",
