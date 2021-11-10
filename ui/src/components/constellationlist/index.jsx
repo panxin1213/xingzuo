@@ -16,7 +16,6 @@ import aquarius from './images/aquarius.png';
 import pisces from './images/pisces.png';
 
 export default function Index(props) {
-
     const list = [
         {
             id: "aries",
