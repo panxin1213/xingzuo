@@ -1,4 +1,4 @@
-import { Image, OpenData, Text, View, Swiper, SwiperItem } from "@tarojs/components";
+import { Image, OpenData, Text, View, Swiper, SwiperItem, Button } from "@tarojs/components";
 import { useEffect, useState } from "react";
 import GuideTop from '../../components/guide-top/index'
 import Nav from '../../components/nav/index'
@@ -42,7 +42,7 @@ export default function Index() {
   const [info, setinfo] = useState({})
   const [act, setact] = useState(0)
   const [act_select, setact_select] = useState(0)
-  const [detail, setdetail] = useState([])
+  const [detail, setdetail] = useState([{}, {}, {}, {}, {}])
   const [sourceType, setsourceType] = useState(0)
   const [gzhShow, setgzhShow] = useState(false)
 
@@ -144,7 +144,7 @@ export default function Index() {
                     <View class="xz-stat">
                       <View class="constellation">{info && info.name}<i class="time">{info && info.time}</i>
                       </View>
-                      <View class="star"><Star count={detail[index] && detail[index].grade} type="star-b red"></Star></View>
+                      <Star count={detail[index] && detail[index].grade} type="star-b red"></Star>
                       <Text class="suggest">{detail[index] && detail[index].suggest}</Text>
                     </View>
                     {index == 0 || index == 1 ? <View class="time-txt">
@@ -167,15 +167,15 @@ export default function Index() {
                   <View class="bottom">
                     <View class="item">
                       <Text class="title">爱情运势</Text>
-                      <View class="star"><Star count={detail[index] && detail[index].love} type="red"></Star></View>
+                      <Star count={detail[index] && detail[index].love} type="red"></Star>
                     </View>
                     <View class="item">
                       <Text class="title">事业学业</Text>
-                      <View class="star"><Star count={detail[index] && detail[index].career} type="blue"></Star></View>
+                      <Star count={detail[index] && detail[index].career} type="blue"></Star>
                     </View>
                     <View class="item">
                       <Text class="title">财富运势</Text>
-                      <View class="star"><Star count={detail[index] && detail[index].wealthy} type="orange"></Star></View>
+                      <Star count={detail[index] && detail[index].wealthy} type="orange"></Star>
                     </View>
                     {sourceType === 1 ? <>
                       {index == 0 || index == 1 ? <View class="item">
@@ -188,7 +188,7 @@ export default function Index() {
                       </View> : ""}
                       {index == 2 || index == 3 || index == 4 ? <View class="item">
                         <Text class="title">健康指数</Text>
-                        <View class="star"><Star count="{{detail[index]&&detail[index].healthy}}" type="green"></Star></View>
+                        <Star count="{{detail[index]&&detail[index].healthy}}" type="green"></Star>
                       </View> : ""}
                       {index == 2 ? <View class="item">
                         <Text class="title">幸运星座</Text>
@@ -216,7 +216,7 @@ export default function Index() {
                     {sourceType === 0 ? <>
                       <View class="item">
                         <Text class="title">健康指数</Text>
-                        <View class="star"><Star count={detail[index] && detail[index].healthy} type="green"></Star></View>
+                        <Star count={detail[index] && detail[index].healthy} type="green"></Star>
                       </View>
                       {index == 0 || index == 1 ? <>
                         <View class="item">

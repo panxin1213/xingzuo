@@ -1,17 +1,7 @@
 
-import Data from '../data.json'
 import Taro from '@tarojs/taro'
 
 const _baseUrl = "http://api.xz.icheguo.com:8090/";
-
-function get(options) {
-    Taro.showLoading();
-    return new Promise((resole, reject) => {
-        resole(Data[options.type]);
-    }).finally(() => {
-        Taro.hideLoading();
-    });
-}
 
 
 function Request(options) {
