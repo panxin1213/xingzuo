@@ -39,4 +39,15 @@ class DataController extends AppBaseController
             "luck_week" => ["image_url" => "https://bgcdn.icheguo.com/xingzuo/lucky_fl_default.png", "wechat_url" => "https://mp.weixin.qq.com/s/XsfbHJUOgCjc1K5KB4lDLQ"]
         ]);
     }
+
+
+    public function getData()
+    {
+        $param = $this->request->param();
+
+        $xingzuo  = array_saft_value($param, 'xingzuo');
+        $type = intval(array_saft_value($param, 'type'));
+
+
+    }
 }
